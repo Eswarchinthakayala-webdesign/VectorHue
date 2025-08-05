@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import Latex from 'react-latex-next';
+import { BlockMath } from 'react-katex';
+import 'katex/dist/katex.min.css';
 import * as math from 'mathjs';
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
-import { Button } from '@/components/ui/button'; // ✅ Update this path if needed
+import { Button } from '@/components/ui/button'; // ✅ Update path if needed
 
 const TangentPlaneForm = ({ onSubmit }) => {
   const [equation, setEquation] = useState('x^2 + y^2');
@@ -122,7 +123,7 @@ const TangentPlaneForm = ({ onSubmit }) => {
         <div className="mt-6 bg-black/20 p-4 rounded-lg border border-white/20">
           <h3 className="mb-2 font-semibold text-purple-400">Tangent Plane Equation:</h3>
           <div className="text-white text-lg overflow-x-auto">
-            <Latex>{`$${latexOutput}$`}</Latex>
+            <BlockMath math={latexOutput} />
           </div>
         </div>
       )}
