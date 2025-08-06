@@ -23,7 +23,7 @@ import SolenoidalPage from "./pages/SolenoidalPage";
 import IrrotationalPage from "./pages/IrrotationalPage";
 import OrthogonalPage from "./pages/OrthogonalPage"; // adjust path as needed
 import ScalarPotentialPage from "./pages/ScalarPotentialPage";
-
+import FormulasPage from './pages/FormulasPage';
 // Inside your <Routes>
 
 
@@ -57,6 +57,7 @@ function App() {
             <Route path="/angle-between-surfaces" element={<AngleBetweenSurfaces />} />
             <Route path="/solenoidal-irrotational" element={<SolenoidalIrrotational />} />
             <Route path="/scalar-potential" element={<ScalarPotential />} />
+             <Route path="/formulas" element={<FormulasPage />} /> 
           </Routes>
         </main>
 
