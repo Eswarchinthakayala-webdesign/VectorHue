@@ -2,10 +2,10 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  Home, Info, Phone, Activity, Sigma, Calculator, Shapes, Layers, 
+  Home, Info, Phone, Activity, Sigma, Calculator, Shapes, Layers,
   Ruler, BookOpen, LineChart, Circle, LayoutList
 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const mainPages = [
   { name: "Home", path: "/", icon: <Home size={20} /> },
@@ -30,6 +30,12 @@ const mathTopics = [
 
 const Sidebar = () => {
   const [open, setOpen] = useState(false);
+  const location = useLocation();
+
+  // Find current page title
+  const allPages = [...mainPages, ...mathTopics];
+  const currentPage = allPages.find(page => page.path === location.pathname);
+  const pageTitle = currentPage ? currentPage.name : "Menu";
 
   return (
     <>
@@ -52,16 +58,22 @@ const Sidebar = () => {
             className="fixed top-0 left-0 h-screen w-64 bg-gradient-to-b from-gray-900/90 to-gray-900/90 backdrop-blur-lg border-r border-purple-500/50 shadow-2xl z-40 overflow-y-auto custom-scroll"
           >
             <div className="p-6">
-              <h2 className="text-2xl font-extrabold text-purple-400 mb-8 tracking-wide drop-shadow-lg pt-14">
-                Menu
+              {/* Dynamic Heading */}
+              <h2 className="text-2xl font-extrabold text-center text-white bg-gradient-to-r from-purple-500 to-indigo-500 p-3 rounded-lg shadow-lg tracking-wide mb-6">
+                {pageTitle}
               </h2>
+
               <nav className="flex flex-col gap-4">
                 {mainPages.map((page) => (
                   <Link
                     key={page.name}
                     to={page.path}
                     onClick={() => setOpen(false)}
-                    className="flex items-center gap-3 p-2 rounded-lg hover:bg-purple-500/20 text-white transition"
+                    className={`flex items-center gap-3 p-2 rounded-lg transition ${
+                      location.pathname === page.path
+                        ? "bg-purple-600 text-white"
+                        : "hover:bg-purple-500/20 text-white"
+                    }`}
                   >
                     {page.icon} {page.name}
                   </Link>
@@ -72,7 +84,11 @@ const Sidebar = () => {
                     key={topic.name}
                     to={topic.path}
                     onClick={() => setOpen(false)}
-                    className="flex items-center gap-3 p-2 rounded-lg hover:bg-indigo-500/20 text-white transition"
+                    className={`flex items-center gap-3 p-2 rounded-lg transition ${
+                      location.pathname === topic.path
+                        ? "bg-indigo-600 text-white"
+                        : "hover:bg-indigo-500/20 text-white"
+                    }`}
                   >
                     {topic.icon} {topic.name}
                   </Link>
