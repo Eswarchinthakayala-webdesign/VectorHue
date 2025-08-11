@@ -4,6 +4,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 import katex from 'katex';
 import 'katex/dist/katex.min.css';
+import Sidebar from '../components/SideBar';
 
 const sections = [
   {
@@ -117,7 +118,8 @@ function renderFormula(formula) {
 
 export default function FormulasPage() {
   return (
-    <div className="min-h-screen bg-black text-white py-12 px-4 md:px-16">
+    <div className="min-h-screen bg-[#1e293b] rounded-2xl text-white py-12 px-4 md:px-16">
+      <Sidebar/>
       <h1 className="text-4xl font-bold text-center text-purple-400 mb-10">Vector Differentiation Formulas</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {sections.map((section, idx) => (
@@ -127,7 +129,7 @@ export default function FormulasPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: idx * 0.1 }}
           >
-            <Card className={cn('bg-zinc-900 border-purple-400')}> 
+            <Card className={cn('bg-[#0f172a] border-purple-400')}> 
               <CardContent className="p-6">
                 <h2 className="text-2xl text-purple-400 font-semibold mb-2">{section.title}</h2>
                 <div className="text-lg mb-2 text-white">

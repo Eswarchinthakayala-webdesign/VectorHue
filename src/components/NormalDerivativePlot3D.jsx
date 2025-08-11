@@ -6,7 +6,7 @@ const NormalDerivativePlot3D = ({ gradientVec, normalVec }) => {
   const origin = [1, 1, 1];
 
   return (
-    <div className="w-full max-w-5xl mx-auto mt-8 p-4 rounded-md bg-[#0f172a] shadow-md">
+    <div className="w-full max-w-5xl mx-auto mt-8 p-4 rounded-md border bg-[#0f172a] shadow-md">
       <h2 className="text-xl font-semibold mb-4 text-center text-white">
         3D Visualization of Gradient ∇f and Normal Vector
       </h2>

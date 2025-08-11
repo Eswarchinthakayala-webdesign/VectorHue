@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ChevronLeft } from "lucide-react";
 import { Button } from "@/components/ui/button"; // Adjust import path if needed
 
 import AngleBetweenSurfacesForm from "../components/AngleBetweenSurfacesForm";
 import AngleBetweenSurfacesPlot3D from "../components/AngleBetweenSurfacesPlot3D";
+import Sidebar from "../components/SideBar";
 
 const AngleBetweenSurfaces = () => {
   const [inputData, setInputData] = useState(null);
@@ -14,16 +15,9 @@ const AngleBetweenSurfaces = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white px-4 py-8">
-      <Link to="/">
-        <Button
-          variant="outline"
-          className="text-black border-white hover:text-white hover:bg-black cursor-pointer"
-        >
-          <ArrowLeft className="h-4 w-4 mr-2" />
-          Back
-        </Button>
-      </Link>
+    <div className="min-h-screen bg-[#1e293b] rounded-2xl text-white px-4 py-8">
+      <Sidebar/>
+    
 
       <h1 className="text-3xl font-bold text-center text-purple-300 mb-8">
         Angle Between Two Surfaces
@@ -37,7 +31,7 @@ const AngleBetweenSurfaces = () => {
         </div>
       )}
 
-      <div className="max-w-4xl mx-auto mt-10 p-6 bg-white/10 backdrop-blur-md rounded-lg border border-purple-300">
+      <div className="max-w-4xl mx-auto mt-10 p-6 bg-[#0f172a] backdrop-blur-md rounded-lg border border-purple-300">
         <h2 className="text-2xl font-bold mb-4 text-purple-400">
           Understanding the Angle Between Surfaces
         </h2>
@@ -68,6 +62,17 @@ const AngleBetweenSurfaces = () => {
           This concept is especially useful in <strong>calculus, physics, and computer graphics</strong> where surface interactions and orientations are significant.
         </p>
       </div>
+      <div className="mt-6 flex justify-end w-full max-w-4xl mx-auto">
+                         <Link to="/">
+                           <Button
+                             variant="outline"
+                             className="text-black border-white hover:text-white hover:bg-black cursor-pointer flex items-center gap-2"
+                           >
+                             <ChevronLeft className="h-4 w-4 mb-[-3px]" />
+                             Back
+                           </Button>
+                         </Link>
+                       </div>
     </div>
   );
 };

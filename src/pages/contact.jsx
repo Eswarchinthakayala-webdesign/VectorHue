@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import Sidebar from "../components/SideBar";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -20,7 +21,8 @@ export default function Contact() {
   };
 
   return (
-    <section className="mx-auto max-w-2xl px-4 py-16 text-white">
+    <section className="mx-auto max-w-2xl px-4 py-16 bg-[#1e293b] rounded-2xl text-white border border-purple-400">
+      <Sidebar/>
       <h1 className="text-4xl font-bold mb-4 text-purple-400">Contact Us</h1>
       <p className="mb-8 text-gray-300">
         Have a question, suggestion, or feedback? Reach out to us using the form below.
@@ -35,6 +37,7 @@ export default function Contact() {
             onChange={handleChange}
             placeholder="Your name"
             required
+            className="bg-[#0f172a]"
             
           />
         </div>
@@ -47,6 +50,7 @@ export default function Contact() {
             onChange={handleChange}
             placeholder="you@example.com"
             required
+            className="bg-[#0f172a]"
           />
         </div>
         <div>
@@ -58,6 +62,7 @@ export default function Contact() {
             rows="5"
             placeholder="Your message"
             required
+            className="bg-[#0f172a]"
           />
         </div>
         <Button type="submit" className="w-full bg-purple-400 hover:bg-purple-700 text-white cursor-pointer">

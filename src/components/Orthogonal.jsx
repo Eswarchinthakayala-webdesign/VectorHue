@@ -33,8 +33,8 @@ const Orthogonal = () => {
       <OrthogonalForm onSubmit={handleSubmit} />
       
       {result && (
-        <div className="max-w-3xl mx-auto mt-6 p-4 sm:p-6 border border-purple-500 bg-[#0f172a] rounded-xl text-center text-white shadow-md">
-          <h3 className="text-lg sm:text-xl font-bold mb-3">Orthogonality Check Result</h3>
+        <div className="max-w-4xl mx-auto mt-6 p-4 sm:p-6 border border-purple-500 bg-[#0f172a] rounded-xl text-center text-white shadow-md">
+          <h3 className="text-lg sm:text-xl text-purple-500 font-bold mb-3">Orthogonality Check Result</h3>
 
           <p className="mb-2 text-slate-300 text-sm sm:text-base">Gradient Vectors:</p>
 
@@ -51,10 +51,10 @@ const Orthogonal = () => {
             <span className="text-purple-300 font-mono">{result.dotProduct}</span>
           </p>
 
-          <p className="mt-4 font-semibold text-sm sm:text-lg">
+          <p className={`mt-4 font-semibold text-sm sm:text-lg ${result.isOrthogonal?"text-green-400":"text-red-600"}`}>
             {result.isOrthogonal
-              ? "✅ The surfaces are Orthogonal at the point"
-              : "❌ The surfaces are NOT Orthogonal at the point"}
+              ? " The surfaces are Orthogonal at the point"
+              : " The surfaces are NOT Orthogonal at the point"}
           </p>
 
           <div className="mt-6 overflow-x-auto">

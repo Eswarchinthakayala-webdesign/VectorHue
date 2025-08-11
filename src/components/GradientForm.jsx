@@ -22,7 +22,7 @@ export default function GradientForm({ onSubmit }) {
   };
 
   return (
-    <Card className="bg-white/5 border border-white/10 shadow-xl p-4 sm:p-6 w-full max-w-xl mx-auto">
+    <Card className="bg-[#0f172a]  border border-purple-400 shadow-xl p-4 sm:p-6 w-full max-w-4xl mx-auto">
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>

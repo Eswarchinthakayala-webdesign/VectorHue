@@ -59,7 +59,7 @@ const NormalDerivativeForm = ({ onSubmit }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6 bg-gray-900 p-6 rounded-md shadow-md border border-gray-700">
+    <form onSubmit={handleSubmit} className="space-y-6 bg-gray-900 p-6 rounded-md shadow-md border border-purple-400">
       {error && <p className="text-red-400 font-medium">{error}</p>}
 
       <div>

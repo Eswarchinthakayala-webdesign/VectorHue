@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import UnitNormalForm from "../components/UnitNormalForm";
 import UnitNormalVectorPlot3D from "../components/UnitNormalVectorPlot3D";
 import { Link } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ChevronLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Sidebar from "../components/SideBar";
 
 const UnitNormalPage = () => {
   const [inputData, setInputData] = useState(null);
@@ -18,17 +19,10 @@ const UnitNormalPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white px-4 py-8">
+    <div className="min-h-screen bg-[#1e293b] rounded-2xl text-white px-4 py-8">
       {/* Back Button */}
-      <Link to="/">
-        <Button
-          variant="outline"
-          className="text-black border-white hover:text-white hover:bg-black cursor-pointer mb-6"
-        >
-          <ArrowLeft className="h-4 w-4 mr-2" />
-          Back
-        </Button>
-      </Link>
+      <Sidebar/>
+      
 
       {/* Page Title */}
       <h1 className="text-3xl font-bold text-center text-purple-300 mb-8">
@@ -36,7 +30,7 @@ const UnitNormalPage = () => {
       </h1>
 
       {/* Input Form */}
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         <UnitNormalForm onSubmit={handleFormSubmit} />
       </div>
 
@@ -57,7 +51,7 @@ const UnitNormalPage = () => {
       )}
 
       {/* Explanation Section */}
-      <div className="max-w-4xl mx-auto mt-10 p-6 bg-white/10 backdrop-blur-md rounded-lg border border-purple-300">
+      <div className="max-w-4xl mx-auto mt-10 p-6 bg-[#0f172a] backdrop-blur-md rounded-lg border border-purple-300">
         <h2 className="text-2xl font-bold mb-4 text-purple-400">
           Understanding Unit Normal Vectors
         </h2>
@@ -77,6 +71,17 @@ const UnitNormalPage = () => {
           This is widely used in surface analysis, computer graphics, and physics.
         </p>
       </div>
+       <div className="mt-6 flex justify-end w-full max-w-4xl mx-auto">
+                         <Link to="/">
+                           <Button
+                             variant="outline"
+                             className="text-black border-white hover:text-white hover:bg-black cursor-pointer flex items-center gap-2"
+                           >
+                             <ChevronLeft className="h-4 w-4 mb-[-3px]" />
+                             Back
+                           </Button>
+                         </Link>
+                       </div>
     </div>
   );
 };

@@ -14,7 +14,7 @@ const OrthogonalForm = ({ onSubmit }) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="w-full max-w-3xl mx-auto bg-[#0f172a] p-6 md:p-8 rounded-lg shadow-md border border-slate-700 text-white"
+      className="w-full max-w-4xl mx-auto bg-[#0f172a] border border-purple-400 p-6 md:p-8 rounded-lg shadow-md  text-white"
     >
       <div className="mb-6">
         <label className="block mb-2 font-semibold text-sm md:text-base">
@@ -63,7 +63,7 @@ const OrthogonalForm = ({ onSubmit }) => {
 
       <button
         type="submit"
-        className="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded transition duration-200"
+        className="w-full cursor-pointer bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded transition duration-200"
       >
         Check Orthogonality
       </button>

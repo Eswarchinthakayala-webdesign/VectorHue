@@ -105,7 +105,7 @@ const AngleBetweenSurfacesPlot3D = ({ equation1, equation2, x0, y0 }) => {
   }, [equation1, equation2, x0, y0]);
 
   return (
-    <div className="w-full max-w-5xl mx-auto p-4">
+    <div className="w-full max-w-4xl mx-auto p-4 bg-[#0f172a] rounded">
       <div ref={plotRef} className="w-full h-[500px]" />
       {theta && (
         <p className="text-center text-xl text-purple-400 mt-4">

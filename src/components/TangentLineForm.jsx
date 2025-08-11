@@ -14,7 +14,7 @@ const TangentLineForm = ({ onSubmit }) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-slate-900 p-6 rounded-lg shadow-md w-full max-w-3xl mx-auto"
+      className="bg-[#0f172a] border border-purple-400 p-6 rounded-lg shadow-md w-full max-w-3xl mx-auto"
     >
       <h2 className="text-lg font-semibold text-purple-400 mb-4 text-center">
         Enter Parametric Curve Inputs

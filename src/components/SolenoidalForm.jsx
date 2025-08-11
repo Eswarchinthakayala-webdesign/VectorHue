@@ -18,19 +18,19 @@ const SolenoidalForm = ({ onSubmit }) => {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full max-w-4xl mx-auto">
       {/* Back Button Outside and Aligned to Left */}
-      <div className="max-w-2xl mx-auto px-4 mb-4">
+      <div className="max-w-4xl mx-auto px-4 mb-4">
         
       </div>
 
       {/* Main Form Card */}
-      <div className="max-w-2xl mx-auto bg-[#0f172a] border border-gray-500 rounded-xl shadow-lg p-6 md:p-10 mt-2 w-full">
+      <div className="max-w-4xl mx-auto bg-[#0f172a] border border-purple-400 rounded-xl shadow-lg p-6 md:p-10 mt-2 w-full">
         <h2 className="text-2xl font-bold text-purple-300 text-center mb-6">
           Solenoidal Vector Field
         </h2>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-6 max-w-3xl mx-auto w-full">
           {/* Vector Field Inputs */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {["Fx", "Fy", "Fz"].map((comp) => (

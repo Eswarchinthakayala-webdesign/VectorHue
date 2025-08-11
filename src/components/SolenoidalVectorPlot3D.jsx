@@ -6,7 +6,7 @@ const SolenoidalVectorPlot3D = ({ point, fieldVec, divergence }) => {
   const [fx, fy, fz] = fieldVec;
 
   return (
-    <div className="w-full max-w-5xl mx-auto mt-8 p-4 rounded-md bg-[#0f172a] shadow-md">
+    <div className="w-full max-w-4xl mx-auto mt-8 p-4 rounded-md bg-[#0f172a] shadow-md">
       <h2 className="text-xl font-semibold text-white text-center mb-4">
         3D Vector Field & Solenoidal Check
       </h2>

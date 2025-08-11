@@ -12,7 +12,7 @@ const UnitNormalVector = ({ equation, point }) => {
   const unitNormal = N.map((c) => +(c / magnitude).toFixed(4));
 
   return (
-    <div className="max-w-2xl mx-auto mt-10 p-6 bg-white/10 backdrop-blur-md rounded-lg border border-white/20">
+    <div className="max-w-3xl mx-auto mt-10 p-6 bg-white/10 backdrop-blur-md rounded-lg border border-white/20">
       <h2 className="text-2xl font-bold mb-4 text-purple-400">Unit Normal Vector</h2>
       <p className="text-white/80 text-lg mb-2">
         For the surface <code className="text-purple-300">z = {equation}</code> at point

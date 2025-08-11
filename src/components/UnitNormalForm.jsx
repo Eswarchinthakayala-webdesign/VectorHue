@@ -14,7 +14,7 @@ const UnitNormalForm = ({ onSubmit }) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="w-full max-w-2xl mx-auto p-4 sm:p-6 md:p-8 space-y-6 bg-white/5 rounded-lg shadow-md backdrop-blur-lg"
+      className="w-full max-w-4xl mx-auto p-4 sm:p-6 md:p-8 space-y-6 bg-[#0f172a] border border-purple-400 rounded-lg shadow-md backdrop-blur-lg"
     >
       <div>
         <label className="block text-white font-semibold mb-2">

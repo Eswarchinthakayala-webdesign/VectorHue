@@ -3,9 +3,10 @@ import React, { useState } from "react";
 import TangentLineForm from "../components/TangentLineForm";
 import TangentLinePlot3D from "../components/TangentLinePlot3D";
 import { evaluate, derivative, parse } from "mathjs";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ChevronLeft } from "lucide-react";
 import { useNavigate, Link } from "react-router-dom"; // Fix import
-
+import Sidebar from "../components/SideBar";
+import { Button } from "@/components/ui/button";
 const TangentLine = () => {
   const [data, setData] = useState(null);
   const [error, setError] = useState("");
@@ -47,14 +48,11 @@ const TangentLine = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-950 to-slate-900 text-white px-4 py-6">
+    <div className="min-h-screen bg-[#1e293b] rounded-2xl text-white px-4 py-6">
       {/* Back Button */}
-      <div className="mb-6">
-        <Link to="/" className="inline-flex items-center px-4 py-2 border border-white text-black rounded bg-white hover:bg-black hover:text-white transition">
-          <ArrowLeft className="h-4 w-4 mr-2" />
-          Back
-        </Link>
-      </div>
+      
+      <Sidebar/>
+     
 
       {/* Title */}
       <h1 className="text-3xl md:text-4xl text-purple-400 text-pur font-bold text-center mb-8">
@@ -62,7 +60,7 @@ const TangentLine = () => {
       </h1>
 
       {/* Input Form */}
-      <div className="max-w-2xl mx-auto">
+      <div className="max-w-3xl mx-auto">
         <TangentLineForm onSubmit={handleSubmit} />
       </div>
 
@@ -77,8 +75,9 @@ const TangentLine = () => {
           <TangentLinePlot3D data={data} />
         
         </div>
-      )}
-        <div className="bg-slate-800 p-6 rounded-lg mt-6 shadow max-w-3xl mx-auto border border-purple-500 text-justify leading-relaxed">
+      )} 
+      <div>
+        <div className="bg-[#0f172a] p-6 rounded-lg mt-6 shadow max-w-3xl mx-auto border border-purple-500 text-justify leading-relaxed">
             <h2 className="text-xl font-semibold mb-3 text-purple-400">
               Tangent Line Description
             </h2>
@@ -92,6 +91,18 @@ const TangentLine = () => {
               curve and the tangent line in space, with <code>z = t</code>.
             </p>
           </div>
+           <div className="mt-6 flex justify-end w-full max-w-3xl mx-auto">
+                   <Link to="/">
+                     <Button
+                       variant="outline"
+                       className="text-black border-white hover:text-white hover:bg-black cursor-pointer flex items-center gap-2"
+                     >
+                       <ChevronLeft className="h-4 w-4 mb-[-3px]" />
+                       Back
+                     </Button>
+                   </Link>
+                 </div>
+      </div>
     </div>
   );
 };

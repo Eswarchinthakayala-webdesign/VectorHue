@@ -24,6 +24,9 @@ import IrrotationalPage from "./pages/IrrotationalPage";
 import OrthogonalPage from "./pages/OrthogonalPage"; // adjust path as needed
 import ScalarPotentialPage from "./pages/ScalarPotentialPage";
 import FormulasPage from './pages/FormulasPage';
+import ScrollToTop from "./components/ScrollToTop";
+import Sidebar from "./components/SideBar";
+
 // Inside your <Routes>
 
 
@@ -33,8 +36,9 @@ import FormulasPage from './pages/FormulasPage';
 function App() {
   return (
     <Router>
+      <ScrollToTop/>
       <div className="relative min-h-screen bg-black text-gray-900">
-       
+        <Sidebar/>
         <NavBar />
 
         <main className="relative z-10 px-4 py-6 sm:px-6 lg:px-8">
@@ -55,7 +59,7 @@ function App() {
             <Route path="/unit-normal" element={<UnitNormalPage />} />
              <Route path="/solenoidal" element={<SolenoidalPage />} />
             <Route path="/angle-between-surfaces" element={<AngleBetweenSurfaces />} />
-            <Route path="/solenoidal-irrotational" element={<SolenoidalIrrotational />} />
+
             <Route path="/scalar-potential" element={<ScalarPotential />} />
              <Route path="/formulas" element={<FormulasPage />} /> 
           </Routes>

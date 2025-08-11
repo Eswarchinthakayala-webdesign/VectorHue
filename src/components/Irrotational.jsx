@@ -30,13 +30,13 @@ const Irrotational = () => {
   };
 
   return (
-    <div className="w-full px-4 sm:px-6 lg:px-8">
+    <div className="w-full">
       {/* Form */}
       <IrrotationalForm onSubmit={handleSubmit} />
 
       {/* Result Box */}
       {result && (
-        <div className="max-w-2xl mx-auto mt-6 p-6 sm:p-8 border border-purple-500 bg-[#0f172a] rounded-xl text-center text-white shadow-lg">
+        <div className="max-w-4xl mx-auto mt-6 p-6 sm:p-8 border border-purple-500 bg-[#0f172a] rounded-xl text-center text-white shadow-lg">
           <h3 className="text-lg sm:text-xl font-bold mb-4">Irrotational Check Result</h3>
 
           <p className="text-sm sm:text-base text-slate-300 mb-2">Curl of the vector field:</p>

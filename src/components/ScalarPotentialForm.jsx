@@ -14,7 +14,7 @@ const ScalarPotentialForm = ({ onSubmit }) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-slate-800 p-6 sm:p-8 rounded-lg shadow-lg w-full max-w-3xl mx-auto mt-6"
+      className="bg-[#0f172a] border border-purple-400 p-6 sm:p-6 rounded-lg shadow-lg w-full max-w-4xl mx-auto mt-6"
     >
       <h2 className="text-2xl sm:text-3xl font-bold text-purple-400 mb-6 text-center">
         Enter Components of the Vector Field

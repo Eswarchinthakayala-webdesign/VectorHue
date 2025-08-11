@@ -51,16 +51,8 @@ const TangentPlaneForm = ({ onSubmit }) => {
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto bg-white/10 backdrop-blur-md rounded-lg shadow-xl p-6 mb-8">
-      <Link to="/">
-        <Button
-          variant="outline"
-          className="text-black border-white hover:bg-black hover:text-white cursor-pointer"
-        >
-          <ArrowLeft className="h-4 w-4 mr-2" />
-          Back
-        </Button>
-      </Link>
+    <div className="w-full max-w-4xl mx-auto bg-[#0f172a] border border-purple-500 backdrop-blur-md rounded-lg shadow-xl p-6 mb-8">
+     
 
       <h2 className="text-2xl font-bold text-purple-400 mb-4 text-center">
         Tangent Plane Calculator
@@ -73,7 +65,7 @@ const TangentPlaneForm = ({ onSubmit }) => {
             type="text"
             value={equation}
             onChange={(e) => setEquation(e.target.value)}
-            className="w-full px-4 py-2 rounded bg-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+            className="w-full px-4 py-2 rounded bg-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 "
             placeholder="e.g., x^2 + y^2"
             required
           />
@@ -86,7 +78,7 @@ const TangentPlaneForm = ({ onSubmit }) => {
               type="number"
               value={x0}
               onChange={(e) => setX0(e.target.value)}
-              className="w-full px-4 py-2 rounded bg-white/20 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              className="w-full px-4 py-2 rounded bg-white/20 text-white focus:outline-none focus:ring-2 "
               required
             />
           </div>
@@ -97,7 +89,7 @@ const TangentPlaneForm = ({ onSubmit }) => {
               type="number"
               value={y0}
               onChange={(e) => setY0(e.target.value)}
-              className="w-full px-4 py-2 rounded bg-white/20 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              className="w-full px-4 py-2 rounded bg-white/20 text-white focus:outline-none focus:ring-2 "
               required
             />
           </div>

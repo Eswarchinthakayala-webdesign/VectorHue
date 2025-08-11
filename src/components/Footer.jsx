@@ -1,12 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-6 mt-10">
+    <footer className="bg-gray-900 text-white py-6 mt-10 z-10">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="text-sm text-center md:text-left">
-            <p>&copy; {new Date().getFullYear()} <span className='text-purple-300'> VectorHue.</span> All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} 
+              
+              <Link to="/">
+              <span className='text-purple-300'> VectorHue.</span>
+              </Link> All rights reserved.</p>
             <p>Empowering education through interactive learning and modern tools.</p>
           </div>
           <div className="mt-4 md:mt-0">

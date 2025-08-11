@@ -6,7 +6,7 @@ const NormalDerivativePlot2D = ({ gradientVec, normalVec }) => {
   const origin = [1, 1]; // You can update this as needed
 
   return (
-    <div className="w-full max-w-4xl mx-auto mt-8 p-4 rounded-md bg-[#0f172a] shadow-md">
+    <div className="w-full max-w-4xl mx-auto mt-8 p-4 rounded-md bg-[#0f172a] border border-purple-600 shadow-md">
       <h2 className="text-xl font-semibold mb-4 text-center text-white">
         2D Vector Visualization of ∇f and Normal Vector
       </h2>

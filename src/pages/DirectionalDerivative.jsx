@@ -4,9 +4,10 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ChevronLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import * as math from "mathjs";
+import Sidebar from "../components/SideBar";
 
 export default function DirectionalDerivative() {
   const [functionInput, setFunctionInput] = useState("");
@@ -60,22 +61,21 @@ export default function DirectionalDerivative() {
   };
 
   return (
-    <div className="min-h-screen p-6 text-white bg-gradient-to-tr from-gray-950 via-black to-gray-900">
-      <div className="max-w-3xl mx-auto">
-        <div className="mb-6 flex items-center justify-center gap-4">
-          <Link to="/">
-            <Button variant="outline" className="text-black border-white hover:bg-black hover:text-white cursor-pointer">
-              <ArrowLeft className="h-4 w-4" /> Back
-            </Button>
-          </Link>
-          <h1 className="text-3xl font-bold text-purple-400">Directional Derivative Calculator</h1>
+    <div className="min-h-screen p-6 text-white bg-[#1e293b] rounded-2xl">
+      <Sidebar />
+      <div className="max-w-4xl mx-auto ">
+        <div className="mb-6 text-center">
+          <h1 className="text-3xl font-bold text-purple-400">
+            Directional Derivative Calculator
+          </h1>
         </div>
 
         <p className="text-gray-400 mb-6">
-          Enter a scalar function, a point, and a direction vector to compute the directional derivative.
+          Enter a scalar function, a point, and a direction vector to compute
+          the directional derivative.
         </p>
 
-        <Card className="bg-white/5 border border-white/10 p-6">
+        <Card className="bg-[#0f172a] border border-purple-400 p-6">
           <CardContent>
             <form className="space-y-4" onSubmit={handleSubmit}>
               <div>
@@ -84,7 +84,7 @@ export default function DirectionalDerivative() {
                   placeholder="e.g., x^2 + y^2 + z^2"
                   value={functionInput}
                   onChange={(e) => setFunctionInput(e.target.value)}
-                  className="bg-black/30 text-white placeholder:text-white/50"
+                  className="bg-[#1e293b] text-white placeholder:text-white/50"
                 />
               </div>
 
@@ -94,7 +94,7 @@ export default function DirectionalDerivative() {
                   placeholder="e.g., 1,2,3"
                   value={pointInput}
                   onChange={(e) => setPointInput(e.target.value)}
-                  className="bg-black/30 text-white placeholder:text-white/50"
+                  className="bg-[#1e293b] text-white placeholder:text-white/50"
                 />
               </div>
 
@@ -104,11 +104,14 @@ export default function DirectionalDerivative() {
                   placeholder="e.g., 1,0,0"
                   value={directionInput}
                   onChange={(e) => setDirectionInput(e.target.value)}
-                  className="bg-black/30 text-white placeholder:text-white/50"
+                  className="bg-[#1e293b] text-white placeholder:text-white/50"
                 />
               </div>
 
-              <Button type="submit" className="w-full bg-purple-600 hover:bg-purple-700 cursor-pointer ">
+              <Button
+                type="submit"
+                className="w-full bg-purple-600 hover:bg-purple-700 cursor-pointer"
+              >
                 Calculate Directional Derivative
               </Button>
             </form>
@@ -116,26 +119,65 @@ export default function DirectionalDerivative() {
         </Card>
 
         {result && (
-          <div className="mt-8 bg-black/30 p-4 rounded-lg border border-gray-700">
+          <div className="mt-8 bg-[#0f172a] p-4 rounded-lg border border-gray-700">
             <h2 className="text-lg font-semibold text-purple-400">Result</h2>
-            <p className="text-white mt-2">{result}</p>
+            <p className="text-green-400 mt-2">{result}</p>
           </div>
         )}
 
-        <div className="mt-8 bg-black/30 p-4 rounded-lg border border-purple-300">
-  <h3 className="text-lg font-semibold text-purple-400">Directional Derivative Vector to a Surface</h3>
-  <p>
-    The <strong>directional derivative</strong> represents the rate at which a function changes at a point in a specified direction.
-    On a 3D surface, the directional derivative vector shows how steeply the surface rises or falls from a given point in that direction.
-    It is computed by taking the dot product of the gradient vector and the direction unit vector.
-  </p>
-  <p className="text-gray-400">
-    Geometrically, this vector lies tangent to the surface and points in the direction of the greatest rate of change, 
-    scaled by the magnitude of the directional derivative. This is like walking on a hill and observing how steep it feels
-    depending on the direction you choose.
-  </p>
-</div>
+        <div className="mt-8 bg-[#0f172a] p-4 rounded-lg border border-purple-300">
+          <h3 className="text-lg font-semibold text-purple-400">
+            Directional Derivative Vector to a Surface
+          </h3>
+          <div className="space-y-4">
+            <p>
+              The <strong>directional derivative</strong> of a scalar function{" "}
+              <em> f(x, y, z) </em> at a point <em>P</em> in the direction of a
+              unit vector <strong> u </strong> represents the rate at which the
+              function changes at that point in that direction. It is defined as:
+            </p>
 
+            <p className="text-center font-bold text-purple-500">
+              D<sub>u</sub>f(P) = ∇f(P) · <strong>u</strong>
+            </p>
+
+            <p>
+              Here, <strong>∇f(P)</strong> is the gradient vector{" "}
+              <strong> (∂f/∂x, ∂f/∂y, ∂f/∂z) </strong> evaluated at <em>P</em>,
+              and the dot product with <strong>u</strong> projects the gradient
+              in the desired direction.
+            </p>
+
+            <p className="text-gray-400">
+              Geometrically, the gradient vector <strong>∇f(P)</strong> points
+              in the direction of the greatest rate of increase of <em>f</em>.
+              The directional derivative scales this by the cosine of the angle
+              between the gradient and the direction vector:
+            </p>
+
+            <p className="text-center text-purple-500 font-bold">
+              D<sub>u</sub>f(P) = ||∇f(P)|| · ||<strong>u</strong>|| · cosθ
+            </p>
+
+            <p className="text-gray-400">
+              On a 3D surface, this can be visualized as the slope you feel when
+              walking in a given direction — steepest uphill when aligned with
+              the gradient, and flat when moving perpendicular to it.
+            </p>
+          </div>
+        </div>
+
+        {/* Back button moved to bottom */}
+        <div className="mt-10 flex items-center justify-end">
+          <Link to="/">
+            <Button
+              variant="outline"
+              className="text-black border-white hover:bg-black hover:text-white cursor-pointer"
+            >
+              <ChevronLeft className="h-4 w-4 text-center mb-[-3px]"  /> Back
+            </Button>
+          </Link>
+        </div>
       </div>
     </div>
   );

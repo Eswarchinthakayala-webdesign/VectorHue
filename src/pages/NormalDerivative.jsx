@@ -3,8 +3,9 @@ import NormalDerivativeForm from "../components/NormalDerivativeForm";
 import NormalDerivativePlot2D from "../components/NormalDerivativePlot2D";
 import NormalDerivativePlot3D from "../components/NormalDerivativePlot3D";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ChevronLeft } from "lucide-react";
 import { Link } from "react-router-dom";
+import Sidebar from "../components/SideBar";
 
 const NormalDerivative = () => {
   const [result, setResult] = useState(null);
@@ -35,15 +36,13 @@ const NormalDerivative = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-gray-800 text-white p-8">
-      <div className="max-w-3xl mx-auto">
+    
+    <div className="min-h-screen bg-[#1e293b] rounded-2xl text-white p-8">
+      <Sidebar/>
+      <div className="max-w-4xl mx-auto">
         {/* Header */}
-        <div className="mb-6 flex items-center gap-4">
-          <Link to="/">
-            <Button variant="outline" className="text-black border-white hover:bg-black cursor-pointer hover:text-white">
-              <ArrowLeft className="h-4 w-4" /> Back
-            </Button>
-          </Link>
+        <div className="mb-6 flex items-center justify-center gap-4">
+        
           <h1 className="text-3xl font-bold text-purple-400">Normal Derivative</h1>
         </div>
 
@@ -61,13 +60,13 @@ const NormalDerivative = () => {
               </h3>
               <p><strong>Evaluated Gradient:</strong> {JSON.stringify(result.evaluatedGradient)}</p>
               <p><strong>Normal Vector:</strong> {JSON.stringify(result.normal)}</p>
-              <p><strong>Normal Derivative:</strong> <span className="text-purple-300">{result.normalDerivative}</span></p>
+              <p><strong>Normal Derivative:</strong> <span className="text-green-400">{result.normalDerivative}</span></p>
             </div>
 
             <div className="mt-10 ">{renderPlot()}</div>
           </>
         )}
-        <div className="mt-12 px-6 py-4 max-w-4xl mx-auto border border-purple-300 rounded ">
+        <div className="mt-12 px-6 bg-[#0f172a] py-4 max-w-4xl mx-auto border border-purple-300 rounded ">
   <h3 className="text-xl font-bold text-purple-400 mb-2">What is a Normal Derivative?</h3>
   <p className="text-slate-300 text-base leading-relaxed">
     The <span className="text-white font-semibold">normal derivative</span> measures the rate of change of a function
@@ -81,7 +80,19 @@ const NormalDerivative = () => {
     This value is useful in boundary value problems, flux analysis, and physics simulations — especially when evaluating flow or change across surfaces.
   </p>
 </div>
-
+    
+     {/* Back Button - Bottom Right */}
+       <div className="mt-6 flex justify-end w-full max-w-4xl mx-auto">
+               <Link to="/">
+                 <Button
+                   variant="outline"
+                   className="text-black border-white hover:text-white hover:bg-black cursor-pointer flex items-center gap-2"
+                 >
+                   <ChevronLeft className="h-4 w-4 mb-[-3px]" />
+                   Back
+                 </Button>
+               </Link>
+        </div>
         
       </div>
 

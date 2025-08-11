@@ -41,7 +41,7 @@ const Solenoidal = () => {
   };
 
   return (
-    <div className="px-4 py-6 space-y-8">
+    <div className="py-6 space-y-8">
       <SolenoidalForm onSubmit={handleSubmit} />
       {result && (
         <SolenoidalVectorPlot3D

@@ -1,24 +1,15 @@
 import React from "react";
 import Irrotational from "../components/Irrotational";
 import { Link } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ChevronLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Sidebar from "../components/SideBar";
 
 const IrrotationalPage = () => {
   return (
-    <div className="min-h-screen bg-[#020617] text-white py-10 px-4 sm:px-6 lg:px-8">
-      {/* Back Button */}
-      <div className="mb-6">
-        <Link to="/">
-          <Button
-            variant="outline"
-            className="text-black border-white hover:text-white hover:bg-black cursor-pointer flex items-center gap-2"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Back
-          </Button>
-        </Link>
-      </div>
+    <div className="min-h-screen bg-[#1e293b] rounded-2xl text-white py-10 px-4 sm:px-6 lg:px-8 flex flex-col">
+      {/* Sidebar */}
+      <Sidebar />
 
       {/* Title */}
       <h1 className="text-3xl sm:text-4xl font-bold text-center text-purple-400 mb-10">
@@ -29,7 +20,7 @@ const IrrotationalPage = () => {
       <Irrotational />
 
       {/* Description Box */}
-      <div className="max-w-3xl mx-auto mt-10 border border-purple-500 rounded-lg p-6 bg-[#0f172a] text-center shadow-lg">
+      <div className="max-w-4xl mx-auto mt-10 border border-purple-500 rounded-lg p-6 bg-[#0f172a] text-center shadow-lg">
         <p className="text-lg sm:text-xl text-slate-300">
           A vector field <span className="text-white font-semibold">𝐅</span> is{" "}
           <span className="text-white font-semibold">irrotational</span> if its
@@ -43,6 +34,19 @@ const IrrotationalPage = () => {
           common in conservative fields like gravitational or electrostatic
           fields.
         </p>
+      </div>
+
+      {/* Back Button - Bottom Right */}
+      <div className="mt-6 flex justify-end w-full max-w-4xl mx-auto w-ful">
+        <Link to="/">
+          <Button
+            variant="outline"
+            className="text-black border-white hover:text-white hover:bg-black cursor-pointer flex items-center gap-2"
+          >
+            <ChevronLeft className="h-4 w-4 mb-[-3px]" />
+            Back
+          </Button>
+        </Link>
       </div>
     </div>
   );

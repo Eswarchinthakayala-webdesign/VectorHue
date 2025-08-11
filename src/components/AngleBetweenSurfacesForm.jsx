@@ -17,14 +17,14 @@ const AngleBetweenSurfacesForm = ({ onSubmit }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-4xl mx-auto bg-white/10 p-6 rounded-lg text-white">
-      <div className="mb-4">
+    <form onSubmit={handleSubmit} className="max-w-4xl mx-auto bg-[#0f172a]  border border-purple-400 p-6 rounded-lg text-white">
+      <div className="mb-4 ">
         <label className="block mb-2">Surface 1 Equation (in x and y):</label>
         <input
           type="text"
           value={equation1}
           onChange={(e) => setEquation1(e.target.value)}
-          className="w-full p-2 rounded bg-gray-900 border border-gray-600 text-white"
+          className="w-full p-2 rounded bg-[#1e293b] border border-gray-600 text-white"
         />
       </div>
       <div className="mb-4">
@@ -33,7 +33,7 @@ const AngleBetweenSurfacesForm = ({ onSubmit }) => {
           type="text"
           value={equation2}
           onChange={(e) => setEquation2(e.target.value)}
-          className="w-full p-2 rounded bg-gray-900 border border-gray-600 text-white"
+          className="w-full p-2 rounded bg-[#1e293b] border border-gray-600 text-white"
         />
       </div>
       <div className="flex flex-col sm:flex-row gap-4">
@@ -43,7 +43,7 @@ const AngleBetweenSurfacesForm = ({ onSubmit }) => {
             type="number"
             value={x0}
             onChange={(e) => setX0(e.target.value)}
-            className="w-full p-2 rounded bg-gray-900 border border-gray-600 text-white"
+            className="w-full p-2 rounded bg-[#1e293b] border border-gray-600 text-white"
           />
         </div>
         <div className="flex-1">
@@ -52,7 +52,7 @@ const AngleBetweenSurfacesForm = ({ onSubmit }) => {
             type="number"
             value={y0}
             onChange={(e) => setY0(e.target.value)}
-            className="w-full p-2 rounded bg-gray-900 border border-gray-600 text-white"
+            className="w-full p-2 rounded bg-[#1e293b] border border-gray-600 text-white"
           />
         </div>
       </div>

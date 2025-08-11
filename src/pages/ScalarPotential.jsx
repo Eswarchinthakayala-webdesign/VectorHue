@@ -1,10 +1,13 @@
 import React from "react";
 import { BlockMath } from "react-katex";
 import "katex/dist/katex.min.css";
+import Sidebar from "../components/SideBar";
 
 const ScalarPotential = () => {
   return (
     <div className="mt-10 border-t pt-6">
+      
+      <Sidebar/>
       <h2 className="text-2xl font-semibold mb-4">Scalar Potential Function</h2>
 
       <p className="text-lg mb-4">

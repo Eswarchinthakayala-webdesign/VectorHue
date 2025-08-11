@@ -15,20 +15,25 @@ const IrrotationalForm = ({ onSubmit }) => {
   };
 
   return (
-    <div className="max-w-2xl mx-auto bg-[#0f172a] border border-gray-400 rounded-xl shadow-lg p-6 md:p-10 mt-6 w-full">
+    <div className="max-w-4xl mx-auto bg-[#0f172a] border border-purple-400 rounded-xl shadow-lg p-6 md:p-10 mt-6 w-full">
       <h2 className="text-2xl font-bold text-purple-400 text-center mb-6">
         Irrotational Vector Field
       </h2>
 
       <form onSubmit={handleSubmit} className="space-y-6">
+        {/* Field Components */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {["Fx", "Fy", "Fz"].map((comp) => (
             <div key={comp}>
-              <label className="block mb-1 text-white font-medium">{comp}(x, y, z)</label>
+              <label className="block mb-1 text-white font-medium">
+                {comp}(x, y, z)
+              </label>
               <input
                 type="text"
                 value={field[comp]}
-                onChange={(e) => setField({ ...field, [comp]: e.target.value })}
+                onChange={(e) =>
+                  setField({ ...field, [comp]: e.target.value })
+                }
                 className="w-full px-4 py-2 rounded bg-white/10 border border-white/30 text-white"
                 placeholder={`e.g., ${comp}`}
               />
@@ -36,20 +41,26 @@ const IrrotationalForm = ({ onSubmit }) => {
           ))}
         </div>
 
+        {/* Point Inputs */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {["x", "y", "z"].map((axis) => (
             <div key={axis}>
-              <label className="block mb-1 text-white font-medium">{axis}-coordinate</label>
+              <label className="block mb-1 text-white font-medium">
+                {axis}-coordinate
+              </label>
               <input
                 type="number"
                 value={point[axis]}
-                onChange={(e) => setPoint({ ...point, [axis]: e.target.value })}
+                onChange={(e) =>
+                  setPoint({ ...point, [axis]: e.target.value })
+                }
                 className="w-full px-4 py-2 rounded bg-white/10 border border-white/30 text-white"
               />
             </div>
           ))}
         </div>
 
+        {/* Submit Button */}
         <div className="flex justify-center">
           <button
             type="submit"

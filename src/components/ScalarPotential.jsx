@@ -23,10 +23,10 @@ const ScalarPotential = () => {
   };
 
   return (
-    <div className="p-6">
+    <div >
       <ScalarPotentialForm onSubmit={handleSubmit} />
       {potential && (
-        <div className="mt-8 bg-slate-900 p-4 rounded text-white max-w-xl mx-auto">
+        <div className="mt-8 bg-slate-900 p-4 rounded text-white max-w-4xl mx-auto">
           <h3 className="text-lg font-semibold text-purple-500 mb-2">Scalar Potential φ(x, y, z):</h3>
           <p className="text-green-400 text-lg break-words">{potential}</p>
         </div>
