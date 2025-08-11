@@ -59,7 +59,7 @@ const Sidebar = () => {
           >
             <div className="p-6">
               {/* Dynamic Heading */}
-              <h2 className="text-2xl font-extrabold text-center text-white bg-gradient-to-r from-purple-500 to-indigo-500 p-3 rounded-lg shadow-lg tracking-wide mb-6">
+              <h2 className="text-xl font-extrabold text-center text-white bg-gradient-to-r from-purple-500 to-indigo-500 p-3 pt-16 rounded-lg shadow-lg tracking-wide mb-6">
                 {pageTitle}
               </h2>
 
@@ -86,8 +86,8 @@ const Sidebar = () => {
                     onClick={() => setOpen(false)}
                     className={`flex items-center gap-3 p-2 rounded-lg transition ${
                       location.pathname === topic.path
-                        ? "bg-indigo-600 text-white"
-                        : "hover:bg-indigo-500/20 text-white"
+                        ? "bg-white text-black border-2 border-purple-400 shadow-md"
+                        : "hover:bg-purple-500/20 text-white"
                     }`}
                   >
                     {topic.icon} {topic.name}
