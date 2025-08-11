@@ -59,7 +59,7 @@ const Sidebar = () => {
           >
             <div className="p-6">
               {/* Dynamic Heading */}
-              <h2 className="text-xl font-extrabold text-center text-white bg-gradient-to-r from-purple-500 to-indigo-500 p-3 pt-16 rounded-lg shadow-lg tracking-wide mb-6">
+              <h2 className="text-xl font-extrabold text-center text-white bg-gradient-to-r from-purple-500 to-indigo-500 p-3 mt-18  rounded-lg shadow-lg tracking-wide mb-6">
                 {pageTitle}
               </h2>
 
