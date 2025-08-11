@@ -15,22 +15,22 @@ const About = () => {
       department: "Computer Science and Engineering",
       work: "Developed the VectorHue",
       img: "/user1.png",
-      socials: {
-        github: "https://github.com/johndoe",
-        linkedin: "https://linkedin.com/in/johndoe",
-        website: "https://johndoe.dev",
+     socials: {
+        github: "https://github.com/Eswarchinthakayala-webdesign",
+        linkedin: "https://www.linkedin.com/in/eswar-chinthakayala-536a91341?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        website: "#",
       },
     },
     {
       name: "Chanda Krishna Chaitanya",
       regno: "192210700",
       department: "Computer Science and Engineering",
-      work: "Worked on the Report for VectorHue",
+      work: "Worked on Design for VectorHue",
       img: "/user2.png",
       socials: {
-        github: "https://github.com/janesmith",
-        linkedin: "https://linkedin.com/in/janesmith",
-        website: "https://janesmith.dev",
+        github: "https://github.com/Eswarchinthakayala-webdesign",
+        linkedin: "https://www.linkedin.com/in/eswar-chinthakayala-536a91341?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        website: "#",
       },
     },
     {
@@ -40,9 +40,9 @@ const About = () => {
       work: "Worked on the Report for VectorHue",
       img: "/user3.png",
       socials: {
-        github: "https://github.com/michaellee",
-        linkedin: "https://linkedin.com/in/michaellee",
-        website: "https://michaellee.dev",
+        github: "https://github.com/Eswarchinthakayala-webdesign",
+        linkedin: "https://www.linkedin.com/in/eswar-chinthakayala-536a91341?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        website: "#",
       },
     },
   ];
