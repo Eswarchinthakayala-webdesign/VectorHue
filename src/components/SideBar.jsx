@@ -1,8 +1,12 @@
 // src/components/Sidebar.jsx
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Star, Home, Info, Phone, Activity, Sigma, Calculator, Shapes, Layers, Ruler, BookOpen, LineChart, Circle, LayoutList,  } from "lucide-react";
+import {
+  Home, Info, Phone, Activity, Sigma, Calculator, Shapes, Layers, 
+  Ruler, BookOpen, LineChart, Circle, LayoutList
+} from "lucide-react";
 import { Link } from "react-router-dom";
+
 const mainPages = [
   { name: "Home", path: "/", icon: <Home size={20} /> },
   { name: "About", path: "/about", icon: <Info size={20} /> },
@@ -32,7 +36,7 @@ const Sidebar = () => {
       {/* Toggle Button */}
       <button
         onClick={() => setOpen(!open)}
-        className="fixed top-1/2 -translate-y-1/2 left-2 z-50 p-2 rounded-r-full  bg-gradient-to-r from-gray-600 to-gray-700 cursor-pointer text-white shadow-2xl hover:scale-105 transition"
+        className="fixed top-1/2 -translate-y-1/2 left-2 z-50 p-2 rounded-r-full bg-gradient-to-r from-gray-600 to-gray-700 cursor-pointer text-white shadow-2xl hover:scale-105 transition"
       >
         <LayoutList size={26} className="text-purple-400" />
       </button>
@@ -53,13 +57,23 @@ const Sidebar = () => {
               </h2>
               <nav className="flex flex-col gap-4">
                 {mainPages.map((page) => (
-                  <Link to={page.path}  className="flex items-center gap-3 p-2 rounded-lg hover:bg-purple-500/20 text-white transition">
+                  <Link
+                    key={page.name}
+                    to={page.path}
+                    onClick={() => setOpen(false)}
+                    className="flex items-center gap-3 p-2 rounded-lg hover:bg-purple-500/20 text-white transition"
+                  >
                     {page.icon} {page.name}
                   </Link>
                 ))}
                 <h3 className="text-lg text-purple-300 mt-6 mb-2">Math Topics</h3>
                 {mathTopics.map((topic) => (
-                  <Link to={topic.path}  className="flex items-center gap-3 p-2 rounded-lg hover:bg-indigo-500/20 text-white transition">
+                  <Link
+                    key={topic.name}
+                    to={topic.path}
+                    onClick={() => setOpen(false)}
+                    className="flex items-center gap-3 p-2 rounded-lg hover:bg-indigo-500/20 text-white transition"
+                  >
                     {topic.icon} {topic.name}
                   </Link>
                 ))}
