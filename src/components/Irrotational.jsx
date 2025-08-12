@@ -46,9 +46,9 @@ const Irrotational = () => {
 
           <p className="mt-4 text-base sm:text-lg font-semibold">
             {result.isIrrotational ? (
-              <span className="text-green-400">✅ The vector field is Irrotational</span>
+              <span className="text-green-400">The vector field is Irrotational</span>
             ) : (
-              <span className="text-red-400">❌ The vector field is NOT Irrotational</span>
+              <span className="text-red-400">The vector field is NOT Irrotational</span>
             )}
           </p>
 
